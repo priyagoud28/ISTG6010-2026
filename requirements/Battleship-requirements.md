@@ -1,51 +1,61 @@
 # Battleship Game – Requirements and User Stories
 
-## 1. 1. Overview
-The specifications and user stories for a software-based Battleship game implementation are presented in this paper.
-Clarity, accuracy, and testability were ensured by refining the criteria once they were obtained through an interview.
+## 1. Introduction
+This document presents the requirements and user stories for a software-based implementation of the Battleship game.  
+The requirements were gathered through an interview and refined to ensure clarity, precision, and testability.
 
-This article aims to prevent ambiguity in acceptance criteria while defining a precise and workable definition of the fundamental Battleship game.
+The goal of this document is to define a clear and implementable specification of the core Battleship game while avoiding ambiguity in acceptance criteria.
 
-**2. Synopsis of the Interview**
 
-**2.1 Objective**
-To learn about gaming guidelines, user expectations, and typical problems with the classic version of the game, an interview with a Battleship game specialist was undertaken.
-The system requirements were guided by this information.
+## 2. Interview Summary
+
+### 2.1 Purpose
+An interview was conducted with a Battleship game expert to understand gameplay rules, user expectations, and common issues in the traditional version of the game.  
+This information was used to guide the system requirements.
+
 
 ### 2.2 Key Questions and Responses
 
-**Q1: How do you play Battleship?  
+**Q1: How is Battleship played?**  
+Battleship is a turn-based strategy game where 🔴 Red Player and 🔵 Blue Player place ships on a grid and take turns guessing coordinates to locate and sink each other’s ships.
 
-In the turn-based strategy game Battleship, 🔴 Red Player and 🔵 Blue Player arrange ships on a grid and alternately estimate locations to find and sink each other's ships.
+**Q2: What are the key components of the game?**  
+Each player uses:
+- One grid for placing ships  
+- One grid for tracking attacks  
+The game also includes ships of different sizes and a turn-based attack system.
 
-**Q2: What are the main elements of the game**?
+**Q3: What problems exist in the traditional version?**  
+Players may:
+- Lose track of previous guesses  
+- Repeat moves  
+- Make errors when recording hits (💥) and misses (🌊)  
+These issues can lead to confusion and unfair gameplay.
 
-Every participant makes use of:One ship placement grid  
-One grid to monitor assaults  
-A turn-based combat mechanism and ships of various sizes are additional features of the game.
+**Q4: How can a software version improve the game?**  
+A digital system can:
+- Automatically track moves  
+- Prevent duplicate or invalid inputs  
+- Provide clear feedback such as hits (💥), misses (🌊), and sunk ships  
 
-**Q3: What issues does the conventional version have?**  
+**Q5: What features are important for users?**  
+Important features include:
+- Clear grid layout  
+- Visual feedback for hits (💥) and misses (🌊)  
+- Easy ship placement  
+- Clear indication of whose turn it is  
 
-Gamers could:- Losing track of prior estimates  
-Repeat the actions  
-Make mistakes when recording misses (🌊) and hits (💥).  
-Confusion and unfair games may result from these problems.
 
-**Q4: How may a software update enhance the game?**  
+### 2.3 Key Findings
+The interview revealed the following essential requirements:
+- Dual-grid system for gameplay and tracking  
+- Automated rule enforcement (no duplicate moves, no overlapping ships)  
+- Immediate visual feedback  
+- Structured turn-based gameplay  
+- Clear and simple user interface  
 
-A digital system is capable of:Track moves automatically  
-Avoid using incorrect or duplicate inputs  
-Give precise feedback, such as hits (💥), misses (🌊), and sunk ships.  
+These findings informed the user stories and acceptance criteria below.
 
-**Q5: Which characteristics are crucial to users?** 
-
-Key characteristics include of:The grid pattern is clear.  
-Hit (💥) and miss (🌊) visual feedback  Simple ship placement  - A clear indicator of who's turn it is## 2.3 Important Results
-The following crucial prerequisites were identified during the interview:Dual-grid tracking and gaming system  Automated rule enforcement (no overlapping ships, no duplicate moves)  Instantaneous visual feedback  
-Turn-based, structured gameplay  
-An easy-to-use interface  
-
-The user stories and approval criteria listed below were influenced by these findings.
 
 ## 3. Scope of the System
 
@@ -64,6 +74,7 @@ The following features are excluded from the core system:
 - Single-player mode (AI opponent)
 - AI difficulty levels
 
+
 ## 4. User Stories and Acceptance Criteria
 
 ### User Story 1: Ship Placement
@@ -77,6 +88,7 @@ The following features are excluded from the core system:
 - The system visually confirms each placed ship.
 - The game does not start until all ships are placed.
 
+
 ### User Story 2: Attack Tracking
 **As the 🔴 Red Player or 🔵 Blue Player, I want a separate tracking grid so that I can see my previous attacks.**
 
@@ -86,6 +98,7 @@ The following features are excluded from the core system:
 - Hits (💥) and misses (🌊) are visually distinguishable.
 - Previously attacked cells remain visible.
 - The tracking grid does not reveal unhit ships.
+
 
 ### User Story 3: Making a Move
 **As the 🔴 Red Player or 🔵 Blue Player, I want to select coordinates on my opponent’s grid so that I can attempt to hit their ships.**
@@ -102,6 +115,7 @@ A valid move is:
 - A coordinate within the grid, and  
 - A coordinate that has not been selected before.
 
+
 ### User Story 4: Move Feedback
 **As a player, I want immediate feedback so that I understand the result of my move.**
 
@@ -110,6 +124,7 @@ A valid move is:
 - A miss is clearly indicated using 🌊.
 - A “ship sunk” message is displayed when all parts of a ship are hit.
 - Feedback is shown immediately after each move.
+
 
 ### User Story 5: Turn Management
 **As a player, I want to know whose turn it is so that gameplay remains organized.**
@@ -120,6 +135,7 @@ A valid move is:
 - The turn switches after each valid move.
 - The current player is clearly displayed (🔴 or 🔵).
 
+
 ### User Story 6: Winning the Game
 **As a player, I want the game to end when all ships of one player are sunk so that the winner is clear.**
 
@@ -129,6 +145,7 @@ A valid move is:
 - The game ends when all ship positions of one player are hit.
 - A winning message is displayed identifying the winner (🔴 or 🔵).
 - No further moves are allowed after the game ends.
+
 
 ### User Story 7: Restarting the Game
 **As a player, I want to restart the game so that I can play again.**
